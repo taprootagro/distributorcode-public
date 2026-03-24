@@ -1,0 +1,22 @@
+{
+  "chatContact": {
+    "name": "rick",
+    "avatar": "https://images.unsplash.com/photo-1614558097757-bf9aa8fb830e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaW1wbGUlMjBtaW5pbWFsaXN0JTIwYXZhdGFyJTIwc2tldGNoJTIwZHJhd2luZ3xlbnwxfHx8fDE3NzA4NTQxODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "subtitle": "TaprootAgro",
+    "imUserId": "your-im-user-id",
+    "imProvider": "tencent-im",
+    "channelId": "your-channel-id",
+    "phone": "123-456-7890",
+    "storeId": "store123",
+    "verifiedDomains": [
+      "taprootagro.com",
+      "agrostore.com"
+    ],
+    "boundAt": 1672531200000,
+    "boundFrom": "taprootagro.com"
+  },
+  "userProfile": {
+    "name": "Rick",
+    "avatar": "https://images.unsplash.com/photo-1642919854816-98575cbaefa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaW1wbGUlMjBsZWFmJTIwc2tldGNoJTIwbWluaW1hbCUyMGRyYXdpbmd8ZW58MXx8fHwxNzcwODU0NDU2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "currencySymbol": "¥",
+  "marketPage": {
+    "categories": [
+      {
+        "id": "herbicide",
+        "name": "除草剂",
+        "subCategories": [
+          "苗前苗后",
+          "苗前",
+          "苗中"
+        ]
+      },
+      {
+        "id": "insecticide",
+        "name": "杀虫剂",
+        "subCategories": [
+          "接触性",
+          "内吸性",
+          "胃毒性"
+        ]
+      },
+      {
+        "id": "fungicide",
+        "name": "杀菌剂",
+        "subCategories": [
+          "保护性",
+          "治疗性",
+          "复合型"
+        ]
+      },
+      {
+        "id": "fertilizer",
+        "name": "肥料",
+        "subCategories": [
+          "氮肥",
+          "磷肥",
+          "钾肥",
+          "生物刺激素"
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "强效除草剂 500ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥68",
+        "category": "herbicide",
+        "subCategory": "苗前苗后",
+        "description": "强效除草剂，适用于苗前和苗后除草",
+        "stock": 100,
+        "details": "<span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span>"
+      },
+      {
+        "id": 2,
+        "name": "生态除草剂 1L",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥52",
+        "category": "herbicide",
+        "subCategory": "苗前",
+        "description": "环保生态除草剂，苗前使用效果佳",
+        "stock": 80,
+        "details": "<span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span>"
+      },
+      {
+        "id": 3,
+        "name": "环保除草剂 300ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥45",
+        "category": "herbicide",
+        "subCategory": "苗中苗后",
+        "description": "苗中苗后专用除草剂",
+        "stock": 120,
+        "details": "<span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span>"
+      },
+      {
+        "id": 4,
+        "name": "高效除草剂 800ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥72",
+        "category": "herbicide",
+        "subCategory": "苗中苗后",
+        "description": "高效除草，持续时间长",
+        "stock": 90
+      },
+      {
+        "id": 5,
+        "name": "接触型杀虫剂 600ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥78",
+        "category": "insecticide",
+        "subCategory": "接触性",
+        "description": "接触即死，快速见效",
+        "stock": 110
+      },
+      {
+        "id": 6,
+        "name": "速效杀虫喷雾 400ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥65",
+        "category": "insecticide",
+        "subCategory": "接触性",
+        "description": "速效杀虫，保护作物",
+        "stock": 95
+      },
+      {
+        "id": 7,
+        "name": "内吸型杀虫剂 800ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥92",
+        "category": "insecticide",
+        "subCategory": "内吸性",
+        "description": "内吸传导，持效期长",
+        "stock": 85
+      },
+      {
+        "id": 8,
+        "name": "长效内吸虫剂 1L",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥108",
+        "category": "insecticide",
+        "subCategory": "内吸性",
+        "description": "长效保护，一次施用持续有效",
+        "stock": 70
+      },
+      {
+        "id": 9,
+        "name": "胃杀虫颗粒 500g",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥58",
+        "category": "insecticide",
+        "subCategory": "胃毒性",
+        "description": "胃毒型杀虫剂，诱杀效果好",
+        "stock": 130
+      },
+      {
+        "id": 10,
+        "name": "高效胃毒剂 700ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥75",
+        "category": "insecticide",
+        "subCategory": "胃毒性",
+        "description": "高效胃毒，针对性强",
+        "stock": 100
+      },
+      {
+        "id": 11,
+        "name": "保护型杀菌剂 500ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥68",
+        "category": "fungicide",
+        "subCategory": "保护性",
+        "description": "预防病害，保护作物健康",
+        "stock": 90
+      },
+      {
+        "id": 12,
+        "name": "预防真菌喷雾 600ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥72",
+        "category": "fungicide",
+        "subCategory": "保护性",
+        "description": "预防真菌感染，提前防护",
+        "stock": 85
+      },
+      {
+        "id": 13,
+        "name": "治疗型杀菌剂 800ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥95",
+        "category": "fungicide",
+        "subCategory": "治疗性",
+        "description": "治疗病害，快速恢复",
+        "stock": 75
+      },
+      {
+        "id": 14,
+        "name": "病害治疗液 1L",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥112",
+        "category": "fungicide",
+        "subCategory": "治疗",
+        "description": "专业治疗各类病害",
+        "stock": 65
+      },
+      {
+        "id": 15,
+        "name": "复合型杀菌 700ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥88",
+        "category": "fungicide",
+        "subCategory": "复合型",
+        "description": "保护加治疗双重功效",
+        "stock": 95
+      },
+      {
+        "id": 16,
+        "name": "全方位杀菌液 900ml",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥98",
+        "category": "fungicide",
+        "subCategory": "复合型",
+        "description": "全方位保护，综合防治",
+        "stock": 80
+      },
+      {
+        "id": 17,
+        "name": "高纯度氮肥 10kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥125",
+        "category": "fertilizer",
+        "subCategory": "氮肥",
+        "description": "高纯度氮肥，促进叶片生长",
+        "stock": 150
+      },
+      {
+        "id": 18,
+        "name": "速效氮肥 5kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥68",
+        "category": "fertilizer",
+        "subCategory": "氮肥",
+        "description": "速效吸收，快速见效",
+        "stock": 200
+      },
+      {
+        "id": 19,
+        "name": "优质磷肥 10kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥138",
+        "category": "fertilizer",
+        "subCategory": "磷肥",
+        "description": "促进根系发育和开花结果",
+        "stock": 120
+      },
+      {
+        "id": 20,
+        "name": "高效磷肥 8kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥115",
+        "category": "fertilizer",
+        "subCategory": "磷肥",
+        "description": "高效磷肥，增强作物抗性",
+        "stock": 140
+      },
+      {
+        "id": 21,
+        "name": "精制钾肥 12kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥145",
+        "category": "fertilizer",
+        "subCategory": "钾肥",
+        "description": "提高产量和品质",
+        "stock": 110
+      },
+      {
+        "id": 22,
+        "name": "速溶钾肥 6kg",
+        "image": "https://placehold.co/400x400/10b981/ffffff?text=TAPROOTAGRO&font=raleway",
+        "price": "¥78",
+        "category": "fertilizer",
+        "subCategory": "钾肥",
+        "description": "速溶钾肥，易吸收用",
+        "stock": 180
+      }
+    ],
+    "advertisements": [
+      {
+        "id": 1,
+        "image": "https://images.unsplash.com/photo-1745258330776-b8c8802fddf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ3JpY3VsdHVyZSUyMGZlcnRpbGl6ZXIlMjBwcm9tb3Rpb24lMjBiYW5uZXJ8ZW58MXx8fHwxNzcyMTcxMjI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "title": "农业技术培训/training",
+        "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>TaprootAgro 2026年春季农业技术培训班正式开放报名！&nbsp;<div>培训内容：\n• 现代化精准农业技术\n• 智能灌溉系统操作指南\n• 病虫害AI识别与防治\n• 土壤检测与施肥方案&nbsp;</div><div>培训时间：2026年4月15日 - 4月20日&nbsp;</div><div>培训地点：济南汉峪金谷/直播&nbsp; 名额有限，先到先得！</div><div><br></div><div><div>TaprootAgro's 2026 Spring Agricultural Technology Training Course is now open for registration!</div><div><br></div><div>Training Content:</div><div>• Modern Precision Agriculture Technology</div><div>• Intelligent Irrigation System Operation Guide</div><div>• AI-based Pest and Disease Identification and Control</div><div>• Soil Testing and Fertilization Solutions</div><div><br></div><div>Training Dates: April 15th - April 20th, 2026</div><div><br></div><div>Training Location: Jinan Hanyu Jingu cbd/live Limited spots available, first come, first served!</div></div>"
+      },
+      {
+        "id": 2,
+        "image": "https://images.unsplash.com/photo-1657288649124-b80bdee3c17e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbmljJTIwZmFybSUyMHByb2R1Y3QlMjBzYWxlJTIwZGlzY291bnR8ZW58MXx8fHwxNzcyMTcxMjI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "title": "有机农产品促销/marketing",
+        "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>有机农产品春季大促！\n\n活动期间全场有机肥料、生物农药享8折优惠。&nbsp;<div>购满500元赠送TaprootAgro定制农具套装一套。&nbsp;</div><div>&nbsp;活动时间：即日起至2026年3月31日\n\n绿色种植，从选对产品开始。</div><div><br></div><div><div>Organic Farm Products Spring Sale!&nbsp;</div><div>Enjoy 20% off all organic fertilizers and biopesticides during the promotion.</div><div><br></div><div>Spend over 500 RMB and receive a free TaprootAgro custom farm tool set.</div><div><br></div><div>Promotion Period: Now until March 31, 2026. Green farming starts with choosing the right products.</div></div>"
+      }
+    ]
+  }
+}

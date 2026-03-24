@@ -1,0 +1,12 @@
+{
+  "backendProxyConfig": {
+    "supabaseUrl": "https://your-supabase-project.supabase.co",
+    "supabaseAnonKey": "your-supabase-anon-key",
+    "edgeFunctionName": "server",
+    "enabled": false,
+    "chatProvider": "cometchat",
+    "imMode": "im-provider-direct",
+    "tencentAppId": "your-tencent-app-id",
+    "cometchatAppId": "your-cometchat-app-id"
+  }
+}

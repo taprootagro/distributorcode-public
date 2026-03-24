@@ -1,0 +1,15 @@
+{
+  "aiModelConfig": {
+    "modelUrl": "",
+    "labelsUrl": "",
+    "enableLocalModel": false
+  },
+  "cloudAIConfig": {
+    "enabled": true,
+    "providerName": "taprootagro ai",
+    "edgeFunctionName": "ai-vision-proxy",
+    "modelId": "qwen-vl-plus",
+    "systemPrompt": "您正在使用TaprootAgro的云端AI深度分析服务，该服务基于通义千问模型，能够提供精准的农业图像识别和分析。",
+    "maxTokens": 512
+  }
+}

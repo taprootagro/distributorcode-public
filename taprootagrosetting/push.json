@@ -1,0 +1,42 @@
+{
+  "pushConfig": {
+    "vapidPublicKey": "YOUR_VAPID_PUBLIC_KEY",
+    "pushApiBase": "https://api.example.com",
+    "enabled": true
+  },
+  "pushProvidersConfig": {
+    "activeProvider": "webpush",
+    "webpush": {
+      "enabled": true,
+      "vapidPublicKey": "YOUR_VAPID_PUBLIC_KEY",
+      "pushApiBase": "https://api.example.com"
+    },
+    "fcm": {
+      "enabled": false,
+      "apiKey": "",
+      "projectId": "",
+      "appId": "",
+      "messagingSenderId": "",
+      "vapidKey": ""
+    },
+    "onesignal": {
+      "enabled": false,
+      "appId": "",
+      "safariWebId": ""
+    },
+    "jpush": {
+      "enabled": false,
+      "appKey": "",
+      "masterSecret": "",
+      "channel": "",
+      "pushApiBase": ""
+    },
+    "getui": {
+      "enabled": false,
+      "appId": "",
+      "appKey": "",
+      "masterSecret": "",
+      "pushApiBase": ""
+    }
+  }
+}

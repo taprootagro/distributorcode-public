@@ -1,0 +1,176 @@
+{
+  "banners": [
+    {
+      "id": 2,
+      "url": "https://images.unsplash.com/photo-1673200692829-fcdb7e267fc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXJtJTIwaGFydmVzdCUyMGNyb3BzfGVufDF8fHx8MTc3MDgyMDI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "alt": "农场作物收割",
+      "title": "taprootagro",
+      "content": "<div>演示/demo</div><div><br></div>简介：<div>Taproot Agro</div><div>to be the taproot of smart agro.&nbsp;</div><div><span style=\"font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, &quot;Noto Sans Myanmar&quot;, &quot;Noto Sans Bengali&quot;, &quot;Noto Sans Thai&quot;, &quot;Noto Sans Arabic&quot;, sans-serif;\">专注农业领域，推动从工厂到农场全产业链数字化转型。</span></div><div><span style=\"font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, &quot;Noto Sans Myanmar&quot;, &quot;Noto Sans Bengali&quot;, &quot;Noto Sans Thai&quot;, &quot;Noto Sans Arabic&quot;, sans-serif;\"><br></span></div><div>Introduction:&nbsp;</div><div>Taproot Agro</div><div>to be the taproot of smart agro.&nbsp;</div><div>Focusing on the agricultural sector, it drives the digital transformation of the entire industry chain from factory to farm.</div><div><span style=\"font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, &quot;Noto Sans Myanmar&quot;, &quot;Noto Sans Bengali&quot;, &quot;Noto Sans Thai&quot;, &quot;Noto Sans Arabic&quot;, sans-serif;\"><br></span></div>"
+    },
+    {
+      "id": 3,
+      "url": "https://images.unsplash.com/photo-1591530712751-96e6f5ad73ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMHBsYW50cyUyMGZhcm1pbmd8ZW58MXx8fHwxNzcwODIwMjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "alt": "授权服务商/Authorized service provider",
+      "title": "店主/shopkeeper",
+      "content": "<div>演示/demo</div>taprootagro 授权服务商--Rick<div>地点：中国济南汉峪金谷</div><div>20年农化经验，提供24h服务，为您的作物生长，保驾护航。<br><div><br></div></div><div><div>Taprootagro Authorized Service Provider - Rick</div><div>Location: Hanyu Jingu, Jinan, China</div><div>20 years of agrochemical experience, providing 24/7 service to safeguard your crop growth.</div></div>"
+    },
+    {
+      "id": 4,
+      "url": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1080",
+      "alt": "病虫害预报/Pest and disease forecast",
+      "title": "病虫害预报/Pest and disease forecast",
+      "content": "<div>演示/demo</div>taprootagro 病虫害预报<div>通过大数据，卫星图谱，为您实时跟踪当地的病虫害发生情况，帮您提前防治</div><div>橙色警告：当前附近有玉米螟虫危害，建议使用taprootagro-lambda进行防治。</div><div><br></div><div><div>Taprootagro Pest and Disease Forecast</div><div>Using big data and satellite imagery, we track local pest and disease occurrences in real time, helping you to prevent and control them in advance.</div><div>Orange Warning: Corn borer infestation is currently present nearby. We recommend using taprootagro-lambda for control.</div></div>"
+    }
+  ],
+  "navigation": [
+    {
+      "id": 1,
+      "icon": "ScanLine",
+      "title": "病虫识别",
+      "subtitle": "AI智能检测"
+    },
+    {
+      "id": 2,
+      "icon": "Bot",
+      "title": "AI助手",
+      "subtitle": "智能问答"
+    },
+    {
+      "id": 3,
+      "icon": "Calculator",
+      "title": "收统计",
+      "subtitle": "数据分析"
+    },
+    {
+      "id": 4,
+      "icon": "MapPin",
+      "title": "农田地图",
+      "subtitle": "位置管理"
+    }
+  ],
+  "liveStreams": [
+    {
+      "id": 1,
+      "title": "水稻种植技术讲解/training",
+      "viewers": "1234",
+      "thumbnail": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "shareEnabled": true,
+      "shareUrl": "taprootagro.com",
+      "shareTitle": "taprootagro live",
+      "shareText": "taprootagro 新产品推荐/taprootagro new product",
+      "navEnabled": true,
+      "navCreatedAt": 1773970052076,
+      "navCoordSystem": "gcj02",
+      "navLongitude": "117.15",
+      "navLatitude": "36.66",
+      "navAddress": "济南汉峪金谷/jinan hayu cbd"
+    },
+    {
+      "id": 2,
+      "title": "有机蔬菜栽培经验分享/training",
+      "viewers": "856",
+      "thumbnail": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "shareEnabled": true,
+      "navEnabled": true,
+      "navCreatedAt": 1773970127826,
+      "shareUrl": "taprootagro.com",
+      "shareTitle": "taprootagro",
+      "shareText": "taprootagro两田三会/taprootagro Two Fields Three Meetings",
+      "navLongitude": "117.15",
+      "navLatitude": "36.66",
+      "navAddress": "济南汉峪金谷/jinan hanyu cbd",
+      "navCoordSystem": "gcj02"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "北极星项目/Project Polaris",
+      "author": "农业专家",
+      "views": "1.2k",
+      "category": "种植技术",
+      "date": "2天前",
+      "content": "<p><b>演示/demo</b></p><p><b>北极星项目</b></p>\n<p><b>重塑农化企业数字化连接</b></p>\n<p>深度绑定\"企业-门店-农户\"全链路，构建数字化渠道关系。将业务数据转化为精准授信模型与核心数字资产，助力企业构建品牌护城河。</p><p><br></p><p><b>Project Polaris</b></p><p><b>Reshaping Agro-Chemical Enterprise Digital Connectivity</b></p><p>\n\n</p><p>Deeply binding the entire \"Enterprise – Store – Farmer\" chain to build digital channel relationships. Transforming business data into precision credit models and core digital assets, empowering enterprises to build a lasting brand moat.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400"
+    },
+    {
+      "id": 2,
+      "title": " taprootagro 大礼包/Taprootagro Gift Pack",
+      "author": "植保专家",
+      "views": "856",
+      "category": "病虫害",
+      "date": "3天前",
+      "content": "<span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span><br><div>taprootagro 大礼包 - 除草剂，杀虫剂，杀菌剂，生物刺激素，肥料。一套大礼包，为您一整年保驾护航；</div><div><br></div><div>Taprootagro Gift Pack - Herbicide, Insecticide, Fungicide, Biostimulant, Fertilizer. One gift pack to protect your health all year round;</div>",
+      "thumbnail": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400"
+    },
+    {
+      "id": 3,
+      "title": "taprootagro加纳开业10周年纪念/taprootagro Ghana 10th Anniversary",
+      "author": "土壤专家",
+      "views": "642",
+      "category": "施肥管理",
+      "date": "5天前",
+      "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>十年前，我们走出国门，前往西非加纳，在那里开启我司非洲市场to C拓展。<div>从tema港口一间平房开始，历经十年发展，我们成为当地领先的农化供应商。</div><div>十年间，我们坚持品质标准，面对复杂的非洲“非标”环境，从不对市场妥协，坚持使用标准含量产品，在当地形成良好口碑，为中国品牌出海，树立了良好形象。</div><div><br></div><div>xxxx</div><div><br></div><div><div>Ten years ago, we ventured abroad to Ghana in West Africa, launching our B2C expansion in the African market.</div><div><br></div><div>Starting from a small house in the port of Tema, we have grown into a leading agrochemical supplier in the region over the past decade.</div><div><br></div><div>Throughout these ten years, we have adhered to high quality standards. Facing the complex and often non-standardized environment of Africa, we have never compromised on market demands, consistently using products with standardized content. This has earned us a strong reputation locally and established a positive image for Chinese brands going global.</div><div><br></div><div>xxxx</div></div>",
+      "thumbnail": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400"
+    },
+    {
+      "id": 4,
+      "title": "尼日利亚奋斗/nigerian struggle",
+      "author": "种植达人",
+      "views": "923",
+      "category": "栽培技术",
+      "date": "1周前",
+      "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>尼日利亚是西非最大的农化单一市场，要布局非洲，这里是避不开的战略支撑点；<div>面对复杂的当地环境，团队成员不顾危险，坚守岗位，深入市场一线，深刻践行持续奋斗公司价值观。短短两年时间，就成为当地领先的农业公司</div><div><br></div><div>Nigeria is the largest single market for agrochemicals in West Africa, making it an indispensable strategic foothold for any expansion in Africa. Faced with a complex local environment, team members disregarded danger, remained steadfast in their posts, and immersed themselves in the front lines of the market, deeply embodying the company's values ​​of continuous striving. In just two years, they have become a leading agricultural company in the region.</div>",
+      "thumbnail": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400"
+    },
+    {
+      "id": 5,
+      "title": "巴西大豆解决方案/Brazilian soy solution",
+      "author": "设施农业专家",
+      "views": "1.5k",
+      "category": "设施农业",
+      "date": "3天前",
+      "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>巴西市场登记困难，成本高，流程长。历来是传统跨国公司自留地。我司不畏困难，勇往直前。不惜代价在当地登记登记证。为巴西农民带去更多，更好用的产品。<div>Registration in Brazil is difficult, costly, and lengthy, traditionally a domain reserved for multinational corporations. Our company, undeterred by these challenges, forged ahead, sparing no expense to obtain local registration certificates. This will bring more and better products to Brazilian farmers.</div>",
+      "thumbnail": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400"
+    },
+    {
+      "id": 6,
+      "title": "taprootagro新产品/taprootagro new products",
+      "author": "灌专家",
+      "views": "789",
+      "category": "灌溉技术",
+      "date": "4天前",
+      "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>红蜘蛛抗药性，是长期困扰农业生产的大麻烦。使用taprootagro&nbsp; xxx和xxx混合方案，进行鸡尾酒治疗。可有效控制红蜘蛛泛滥次数。<div><br></div><div>Spider mite resistance is a long-standing problem plaguing agricultural production. Using a combination of Taprootagro xxx and xxx for a \"cocktail\" treatment can effectively control spider mite infestations.</div>",
+      "thumbnail": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400"
+    },
+    {
+      "id": 7,
+      "title": "国补来啦/State subsidies",
+      "author": "果树专家",
+      "views": "1.1k",
+      "category": "果树管理",
+      "date": "6天前",
+      "content": "<div><span style=\"border-color: rgba(0, 0, 0, 0.1); outline-color: oklab(0.708 0 0 / 0.5); font-weight: bolder;\">演示/demo</span></div>农民朋友们，2026年国家种地补贴来啦，部分作物有特殊补贴，来去领取啊<div>xxxx</div><div>xxxx</div><div><br></div><div><div>Farmers, the 2026 national farming subsidies are here! Special subsidies are available for some crops. Come and collect them!</div><div><br></div><div>xxxx</div><div>xxxx</div></div>",
+      "thumbnail": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400"
+    }
+  ],
+  "videoFeed": {
+    "title": "农业短视频",
+    "description": "观看最新农业技术视频",
+    "videoSources": [
+      "https://example.com/video1.mp4",
+      "https://example.com/video2.mp4"
+    ]
+  },
+  "homeIcons": {
+    "aiAssistantIconUrl": "",
+    "aiAssistantLabel": "taprootagro-ai",
+    "statementIconUrl": "",
+    "statementLabel": "taprootagro-book",
+    "liveCoverUrl": "",
+    "liveTitle": "两田三会/新品上市//Two Fields Three Meetings / New Product Launch",
+    "liveBadge": ""
+  }
+}

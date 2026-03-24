@@ -1,0 +1,24 @@
+{
+  "liveShareConfig": {
+    "enabled": true,
+    "shareUrl": "",
+    "shareTitle": "TaprootAgro直播",
+    "shareText": "欢迎观看TaprootAgro的直播，了解更多农业技术知识！",
+    "shareImgUrl": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400",
+    "wxJsSdkEnabled": true,
+    "wxAppId": "your-wx-app-id",
+    "wxSignatureApi": "https://your-backend-api/signature"
+  },
+  "liveNavigationConfig": {
+    "enabled": true,
+    "latitude": "39.9042",
+    "longitude": "116.4074",
+    "address": "北京市海淀区中关村大街1号",
+    "coordSystem": "wgs84",
+    "baiduMap": true,
+    "amapMap": true,
+    "googleMap": true,
+    "appleMaps": true,
+    "waze": true
+  }
+}

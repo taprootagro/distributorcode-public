@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.local
+
+# Environment & secrets (never commit real keys)
+.env
+.env.*
+!.env.example
+
+# Logs & debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.idea/
+*.sublime-*
+
+# Optional: uncomment if you don't share VS Code settings in the repo
+# .vscode/
+
+# Test & coverage
+coverage/
+.nyc_output/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+*.tsbuildinfo
+
+# Vite
+.vite/
+
+# Supabase CLI local state (if you use `supabase start`)
+supabase/.branches/
+supabase/.temp/
+
+# Misc
+*.pem
+.vercel
