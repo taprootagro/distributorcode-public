@@ -160,8 +160,9 @@ export function ConfigProvider({ children, defaultConfig }: { children: ReactNod
       window.dispatchEvent(new CustomEvent('configUpdate', { detail: merged }));
     } catch (err: any) {
       console.warn('[ConfigProvider] remote fetch failed:', err);
-      setSyncStatus('error');
-      setLastSyncError(err.message || String(err));
+      // 离线/弱网不打扰用户：沿用本地已缓存配置，不进入 error 态
+      setSyncStatus('synced');
+      setLastSyncError(null);
     }
   }, [defaultConfig, getSupabaseCreds]);
 

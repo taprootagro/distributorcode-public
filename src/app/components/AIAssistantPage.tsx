@@ -343,6 +343,8 @@ export function AIAssistantPage({ onClose }: AIAssistantPageProps) {
   const detectorRef = useRef<TaprootAgroDetector | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pendingDrawRef = useRef<{ img: HTMLImageElement; dets: Detection[] } | null>(null);
+  /** 断网后从 cloud-only 尝试本地模型只试一次，避免失败死循环 */
+  const offlineLocalLoadTried = useRef(false);
 
   // 加载模型
   // Silent background loading (for cloud-only mode)
@@ -376,6 +378,10 @@ export function AIAssistantPage({ onClose }: AIAssistantPageProps) {
 
   // Normal loading with UI feedback (for local mode)
   const loadModel = useCallback(async () => {
+    if (detectorRef.current) {
+      setStatus('ready');
+      return;
+    }
     setStatus('loading');
     setProgress(0);
     setErrorMsg('');
@@ -393,9 +399,12 @@ export function AIAssistantPage({ onClose }: AIAssistantPageProps) {
     } catch (err: any) {
       const msg = err?.message || String(err);
       console.log('🔍 Model load error:', msg);
-      // 如果云AI已启用，即使本地模型缺失也直接进入云端��式
       if (config.cloudAIConfig?.enabled) {
-        setStatus('cloud-only');
+        if (typeof navigator !== 'undefined' && !navigator.onLine) {
+          setStatus('no-model');
+        } else {
+          setStatus('cloud-only');
+        }
       } else {
         setStatus('no-model');
       }
@@ -406,13 +415,24 @@ export function AIAssistantPage({ onClose }: AIAssistantPageProps) {
   useEffect(() => {
     if (cloudOnlyMode) {
       setStatus('cloud-only');
-      // Background load local model for emergency fallback
       silentLoadModel();
     } else {
       loadModel();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount
+
+  useEffect(() => {
+    if (isOnline) offlineLocalLoadTried.current = false;
+  }, [isOnline]);
+
+  // 联网时 cloud-only，断网后自动回落本地模型（仅尝试一次）
+  useEffect(() => {
+    if (!isOnline && config.cloudAIConfig?.enabled && status === 'cloud-only' && !offlineLocalLoadTried.current) {
+      offlineLocalLoadTried.current = true;
+      loadModel();
+    }
+  }, [isOnline, status, config.cloudAIConfig?.enabled, loadModel]);
 
   // Cloud-only mode: auto-trigger analysis as soon as image is set
   const autoTriggeredRef = useRef(false);

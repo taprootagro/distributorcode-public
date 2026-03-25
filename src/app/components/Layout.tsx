@@ -1,5 +1,4 @@
 import { Link, useLocation, Navigate } from "react-router";
-import { useNetworkQuality } from "../hooks/useNetworkQuality";
 import { useKeyboardVisible } from "../hooks/useKeyboardVisible";
 import { Home, NotebookText, MessageCircle, User } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
@@ -31,7 +30,6 @@ export function Layout() {
 
   // ---- 所有 hooks 必须无条件调用（React Rules of Hooks）----
   const { t, isRTL } = useLanguage();
-  const networkQuality = useNetworkQuality();
   const keyboardVisible = useKeyboardVisible();
 
   // ---- 禁止左右滑动切换页面（浏览器前进/后退手势）----

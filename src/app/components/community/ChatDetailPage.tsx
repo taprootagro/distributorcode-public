@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from "react";
-import { WifiOff, ChevronLeft, Volume2, VolumeX, AlertTriangle } from "lucide-react";
+import { ChevronLeft, Volume2, VolumeX, AlertTriangle } from "lucide-react";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useChatMessages } from "./hooks/useChatMessages";
 import { useVoiceSystem } from "./hooks/useVoiceSystem";
@@ -8,7 +8,6 @@ import { MessageBubble } from "./MessageBubble";
 import { ImageViewer } from "./ImageViewer";
 import { useConfigContext } from "../../hooks/ConfigProvider";
 import { type ChatMessage } from "../../services/ChatProxyService";
-import { useNetworkQuality } from "../../hooks/useNetworkQuality";
 import { Virtuoso, VirtuosoHandle } from "react-virtuoso";
 import type { Conversation } from "./ConversationListPage";
 
@@ -28,10 +27,8 @@ interface ChatDetailPageProps {
 }
 
 export function ChatDetailPage({ conversation, onBack }: ChatDetailPageProps) {
-  const { t, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
   const { config } = useConfigContext();
-  const { online: isOnline } = useNetworkQuality();
-
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     const prev = meta?.getAttribute("content") || "#059669";
@@ -129,14 +126,6 @@ export function ChatDetailPage({ conversation, onBack }: ChatDetailPageProps) {
             callStatus={callStatus}
           />
         </Suspense>
-      )}
-
-      {/* Offline banner */}
-      {!isOnline && (
-        <div className="absolute top-0 left-0 right-0 bg-amber-50 border-b border-amber-200 text-amber-800 text-xs py-1.5 px-3 flex items-center justify-center gap-1.5 z-40">
-          <WifiOff className="w-3 h-3 text-amber-500" />
-          <span>{t.settings?.backgroundSyncDesc || "Offline mode"}</span>
-        </div>
       )}
 
       {/* IM connection error banner */}

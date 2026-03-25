@@ -5,14 +5,14 @@
 //   - Same-origin: Cache-first for instant load
 //   - Cross-origin images: Cache-first with network fallback
 //   - Cross-origin CDN (jsDelivr etc): Cache-first for ONNX Runtime
-//   - Navigation: Always resolves to cached index.html (SPA)
+//   - Navigation: Cached index.html served first when present; online BG refresh
 //   - Once per day (first open), background-check server for updates
 //   - Offline: Serve everything from cache, placeholder for uncached images
 //   - Remote config: cache strategy override, maintenance mode, feature flags,
 //     force update/reload, cache purge, kill switch, announcements
 // ============================================================
 
-const CACHE_VERSION = 'v11'; // skipWaiting on install — faster SW control for PWA install criteria (Edge/Chrome first visit)
+const CACHE_VERSION = 'v12'; // Nav: cache-first shell + BG refresh when online (instant open offline)
 const CACHE_PREFIX = 'taproot-agro';
 const CACHE_NAME = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const IMG_CACHE_NAME = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
@@ -612,7 +612,7 @@ self.addEventListener('fetch', (event) => {
   // ----- Same-origin requests -----
   if (url.origin === self.location.origin) {
     if (request.mode === 'navigate') {
-      event.respondWith(safeRespond(() => handleNavigation(), request));
+      event.respondWith(safeRespond(() => handleNavigation(event), request));
       return;
     }
 
@@ -778,66 +778,59 @@ async function handleSwReset() {
 }
 
 // ============================================================
-// SPA Navigation Handler — Offline-first for PWA reliability
+// SPA Navigation — cache-first when shell exists; BG refresh if online (no blocking)
 // ============================================================
-async function handleNavigation() {
-  // ---- Pre-check cache availability ----
+async function handleNavigation(event) {
   const cachedIndex = await caches.match('/index.html');
   const cachedRoot = await caches.match('/');
+  const shell = cachedIndex || cachedRoot;
 
-  // ---- Offline-first: if we know we're offline AND have a cached shell, skip network entirely ----
-  // This prevents the user from ever seeing a "No Network" page when the app is already cached.
-  // navigator.onLine is available in Service Workers.
-  if (!self.navigator.onLine) {
-    if (cachedIndex) {
-      console.log('[SW] Offline — serving cached index.html instantly');
-      return stripRedirect(cachedIndex);
+  if (shell) {
+    if (self.navigator.onLine) {
+      event.waitUntil(
+        (async () => {
+          try {
+            const res = await fetch('/index.html', { cache: 'no-store' });
+            if (res.ok) {
+              const clean = stripRedirect(res);
+              const cache = await caches.open(CACHE_NAME);
+              await cache.put('/index.html', clean.clone());
+              await cache.put('/', clean.clone());
+            }
+          } catch (e) {
+            console.warn('[SW] BG index.html refresh failed:', e);
+          }
+        })()
+      );
     }
-    if (cachedRoot) {
-      console.log('[SW] Offline — serving cached / instantly');
-      return stripRedirect(cachedRoot);
-    }
-    // Truly no cache at all (first visit ever while offline)
-    return createOfflineFallbackPage();
+    return stripRedirect(shell);
   }
 
-  // ---- Online: network-first with timeout, fall back to cache ----
-  try {
-    const controller = new AbortController();
-    const hasCachedIndex = !!cachedIndex;
-
-    const navConfig = activeConfig?.navTimeoutMs || {};
-    const navTimeout = hasCachedIndex
-      ? (navConfig.withCache || DEFAULT_NAV_TIMEOUT_WITH_CACHE)
-      : (navConfig.withoutCache || DEFAULT_NAV_TIMEOUT_WITHOUT_CACHE);
-    const timeoutId = setTimeout(() => controller.abort(), navTimeout);
-
-    const networkResponse = await fetch('/index.html', {
-      cache: 'no-store',
-      signal: controller.signal,
-    });
-    clearTimeout(timeoutId);
-
-    if (networkResponse.ok) {
-      const clean = stripRedirect(networkResponse);
-      const cache = await caches.open(CACHE_NAME);
-      cache.put('/index.html', clean.clone());
-      cache.put('/', clean.clone());
-      return clean;
+  if (self.navigator.onLine) {
+    try {
+      const controller = new AbortController();
+      const navConfig = activeConfig?.navTimeoutMs || {};
+      const navTimeout = navConfig.withoutCache || DEFAULT_NAV_TIMEOUT_WITHOUT_CACHE;
+      const timeoutId = setTimeout(() => controller.abort(), navTimeout);
+      const networkResponse = await fetch('/index.html', {
+        cache: 'no-store',
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (networkResponse.ok) {
+        const clean = stripRedirect(networkResponse);
+        const cache = await caches.open(CACHE_NAME);
+        await cache.put('/index.html', clean.clone());
+        await cache.put('/', clean.clone());
+        return clean;
+      }
+      throw new Error(`HTTP ${networkResponse.status}`);
+    } catch (error) {
+      console.warn('[SW] Navigation fetch failed (no prior cache):', error.message || error);
     }
-    throw new Error(`HTTP ${networkResponse.status}`);
-  } catch (error) {
-    console.warn('[SW] Navigation network-first failed, falling back to cache:', error.message || error);
-
-    if (cachedIndex) {
-      return stripRedirect(cachedIndex);
-    }
-    if (cachedRoot) {
-      return stripRedirect(cachedRoot);
-    }
-
-    return createOfflineFallbackPage();
   }
+
+  return createOfflineFallbackPage();
 }
 
 /**
