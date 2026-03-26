@@ -163,10 +163,17 @@ export class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.setState({ errorInfo });
 
-    // ---- Chunk 加载失败：走专属恢复流程 ----
+    // ---- Chunk 加载失败 ----
     if (isChunkLoadError(error)) {
-      console.warn('[ErrorBoundary] Chunk load error, attempting recovery...');
       errorMonitor.capture(error, { type: 'react', context: 'ChunkLoadError' });
+      // 离线：不 reload、不清缓存，通知首页关闭二级层并保持原页（避免整页错误/无网壳）
+      if (typeof navigator !== 'undefined' && !navigator.onLine) {
+        console.warn('[ErrorBoundary] Chunk load error while offline — dismiss overlay, no reload');
+        window.dispatchEvent(new CustomEvent('taproot:chunk-unavailable-offline'));
+        this.setState({ hasError: false, error: null, errorInfo: null, silentRetryCount: 0 });
+        return;
+      }
+      console.warn('[ErrorBoundary] Chunk load error, attempting recovery...');
       attemptChunkRecovery();
       return;
     }

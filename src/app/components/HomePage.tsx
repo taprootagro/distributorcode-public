@@ -105,6 +105,33 @@ export function HomePage() {
     startTransition(() => setCurrentView(view));
   }, []);
 
+  /** 无网时先 import 再打开懒模块；未缓存则静默不切换，避免 Suspense/ErrorBoundary 整页恢复 */
+  const prefetchThenOpenLazyOverlay = useCallback(
+    (loader: () => Promise<unknown>, view: typeof currentView) => {
+      const open = () => {
+        if (view.type !== "home") {
+          const sp = getVerticalScrollParent(homeRootRef.current);
+          if (sp) savedHomeScrollTop.current = sp.scrollTop;
+        }
+        startTransition(() => setCurrentView(view));
+      };
+      if (typeof navigator !== "undefined" && navigator.onLine === false) {
+        loader()
+          .then(() => open())
+          .catch(() => {});
+        return;
+      }
+      open();
+    },
+    []
+  );
+
+  useEffect(() => {
+    const onChunkOffline = () => setCurrentView({ type: "home" });
+    window.addEventListener("taproot:chunk-unavailable-offline", onChunkOffline);
+    return () => window.removeEventListener("taproot:chunk-unavailable-offline", onChunkOffline);
+  }, []);
+
   // 关闭二级页后恢复 Layout 外层滚动位置（home 主体曾 display:none 会导致 scrollTop 被重置）
   useLayoutEffect(() => {
     if (currentView.type !== "home") {
@@ -369,7 +396,7 @@ export function HomePage() {
             {/* AI助手和对账单 — 图标居中、按实际比例、最大可覆盖卡片 */}
             <div className="grid grid-cols-2 gap-3">
               <button 
-                onClick={() => navigateTo({ type: "aiAssistant" })}
+                onClick={() => prefetchThenOpenLazyOverlay(() => import("./AIAssistantPage"), { type: "aiAssistant" })}
                 className="bg-white rounded-2xl p-4 flex flex-col items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg aspect-square min-h-0"
               >
                 <div className="flex-1 min-h-0 w-full flex items-center justify-center overflow-hidden">
@@ -382,7 +409,9 @@ export function HomePage() {
                 <span className="text-sm text-gray-800 font-medium flex-shrink-0">{config.homeIcons?.aiAssistantLabel || t.home.aiAssistant}</span>
               </button>
               <button 
-                onClick={() => navigateTo({ type: "marketCatalog" })}
+                onClick={() =>
+                  prefetchThenOpenLazyOverlay(() => import("./MarketCatalogOverlay"), { type: "marketCatalog" })
+                }
                 className="bg-white rounded-2xl p-4 flex flex-col items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg aspect-square min-h-0"
               >
                 <div className="flex-1 min-h-0 w-full flex items-center justify-center overflow-hidden">
@@ -398,7 +427,7 @@ export function HomePage() {
 
             {/* 直播区域 */}
             <button 
-              onClick={() => navigateTo({ type: "videoFeed" })}
+              onClick={() => prefetchThenOpenLazyOverlay(() => import("./VideoFeedPage"), { type: "videoFeed" })}
               className="w-full aspect-[2/1] rounded-2xl overflow-hidden relative active:scale-95 transition-transform shadow-lg"
             >
               <img
